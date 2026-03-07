@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BROSSEO — Pricing Plans</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/12e2066573.js" crossorigin="anonymous"></script>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <div class="nav-logo">BROSSEO</div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#pricing" class="nav-cta">Get Started</a>
+      </div>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="container">
+
+      <!-- Announcement pill badge -->
+      <div class="fade-up hero-badge">
+        Get 6 Months FREE — 30% Off Today
+      </div>
+
+      <!-- Main headline; <em> renders with gradient text fill -->
+      <h1 class="fade-up">
+        The WordPress SEO Plugin<br/>
+        <em>Trusted by 3.5M+</em> Professionals
+      </h1>
+
+      <p class="fade-up">
+        Improve your search Engines rankings with the most powerful,
+        beginner-friendly SEO toolkit.
+      </p>
+
+      <!-- Social-proof stat strip; each stat uses stagger-children delay -->
+      <div class="hero-stats stagger-children">
+        <div class="hero-stat fade-up"><strong>3.5M+</strong><span>Active Websites</span></div>
+        <div class="hero-stat fade-up"><strong>4.9 Rates</strong><span>Average Rating</span></div>
+        <div class="hero-stat fade-up"><strong>14 Days</strong><span>Money-Back Guarantee</span></div>
+        <div class="hero-stat fade-up"><strong>All</strong><span>Languages Supported</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRICING — billing toggle + four plan cards
+       ============================================================ -->
+  <section class="section" id="pricing">
+    <div class="container">
+
+      <div class="text-center fade-up">
+        <span class="section-label">Pricing Plans</span>
+        <h2 class="section-title">Simple Prices. No Surprises.</h2>
+        <p class="section-sub">All plans include a 14-day no-risk money-back guarantee.</p>
+      </div>
+
+      <!-- Billing toggle — JS toggleBilling() swaps prices + labels -->
+      <div class="billing-toggle fade-up">
+        <span class="toggle-label active" id="lbl-annual">Annual</span>
+        <div class="toggle on" id="billing-toggle" onclick="toggleBilling()">
+          <div class="toggle-knob"></div>
+        </div>
+        <span class="toggle-label" id="lbl-monthly">Monthly</span>
+        <span class="save-badge">Save up to 30%</span>
+      </div>
+
+      <!-- Grid of four cards; stagger-children handles reveal delays -->
+      <div class="pricing-grid stagger-children">
+
+        <!-- ELITE — highest tier, 100 sites -->
+        <div class="plan-card fade-up">
+          <div class="plan-name">Elite</div>
+          <div class="plan-desc">Premier for agencies &amp; smart business owners</div>
+          <div class="plan-original" id="elite-orig">normally $589.00</div>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount" id="elite-price">289</span>
+            <span class="period" id="elite-period">.50&nbsp;/ year</span>
+          </div>
+          <div class="plan-savings" id="elite-save">$289.50 savings*</div>
+          <!-- openModal() pre-fills the purchase modal with this plan's data -->
+          <button class="btn-plan btn-plan-outline" onclick="openModal('Elite','289.50','$589.00')">Get Started</button>
+          <div class="plan-features">
+            <div class="plan-feature"><div class="icon check">✓</div><span>Use on <strong>100 sites</strong></span></div>
+            <div class="plan-feature"><div class="icon star">✓</div><span>200,000 AI Credits <span class="tag-new">NEW</span></span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Unlimited SEO Audits</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Unlimited SEO Revisions</span></div>
+            <div class="feature-category">SEO Master Tools</div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Keyword Rank Tracking</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Content Decay Tracking</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Client Management</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Multi-site Support</span></div>
+            <div class="feature-category">Support</div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Premium Priority Support</span></div>
+          </div>
+        </div>
+
+        <!-- PRO — featured card, highlighted border + scale -->
+        <div class="plan-card featured fade-up">
+          <div class="best-deal-badge">Best Deal</div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-desc">Everything you need to do SEO, the RIGHT way</div>
+          <div class="plan-original" id="pro-orig">normally $389.00</div>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount" id="pro-price">189</span>
+            <span class="period" id="pro-period">.50&nbsp;/ year</span>
+          </div>
+          <div class="plan-savings" id="pro-save">$189.50 savings*</div>
+          <button class="btn-plan btn-plan-primary" onclick="openModal('Pro','189.50','$389.00')">Get Started</button>
+          <div class="plan-features">
+            <div class="plan-feature"><div class="icon check">✓</div><span>Use on <strong>10 sites</strong></span></div>
+            <div class="plan-feature"><div class="icon star">✓</div><span>50,000 AI Credits <span class="tag-new">NEW</span></span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Unlimited SEO Audits</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>30 SEO Revisions</span></div>
+            <div class="feature-category">Advanced Redirects</div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Fast Server Redirects</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>404 Error Tracking</span></div>
+            <div class="feature-category">Internal Link Assistant</div>
+            <div class="plan-feature"><div class="icon star">✓</div><span>Automate Internal Links</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Orphaned Posts Reports</span></div>
+            <div class="feature-category">Support</div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Priority Support</span></div>
+          </div>
+        </div>
+
+        <!-- PLUS — mid-tier, 3 sites -->
+        <div class="plan-card fade-up">
+          <div class="plan-name">Plus</div>
+          <div class="plan-desc">Great for businesses who want to do more</div>
+          <div class="plan-original" id="plus-orig">normally $189.00</div>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount" id="plus-price">89</span>
+            <span class="period" id="plus-period">.50&nbsp;/ year</span>
+          </div>
+          <div class="plan-savings" id="plus-save">$89.50 savings*</div>
+          <button class="btn-plan btn-plan-outline" onclick="openModal('Plus','89.50','$189.00')">Get Started</button>
+          <div class="plan-features">
+            <div class="plan-feature"><div class="icon check">✓</div><span>Use on <strong>3 sites</strong></span></div>
+            <div class="plan-feature"><div class="icon star">✓</div><span>25,000 AI Credits <span class="tag-new">NEW</span></span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Unlimited SEO Audits</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>15 SEO Revisions</span></div>
+            <div class="feature-category">Local Business SEO</div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Multiple Locations</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Local Business Schema</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Google Maps Integration</span></div>
+            <div class="feature-category">Image SEO</div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Autogenerate Alt Text</span></div>
+            <div class="feature-category">Support</div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Standard Support</span></div>
+          </div>
+        </div>
+
+        <!-- BASIC — entry tier, 1 site -->
+        <div class="plan-card fade-up">
+          <div class="plan-name">Basic</div>
+          <div class="plan-desc">Essential tools to improve your SEO ranking</div>
+          <div class="plan-original" id="basic-orig">normally $99.00</div>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount" id="basic-price">49</span>
+            <span class="period" id="basic-period">.50&nbsp;/ year</span>
+          </div>
+          <div class="plan-savings" id="basic-save">$49.50 savings*</div>
+          <button class="btn-plan btn-plan-outline" onclick="openModal('Basic','49.50','$89.00')">Get Started</button>
+          <div class="plan-features">
+            <div class="plan-feature"><div class="icon check">✓</div><span>Use on <strong>1 site</strong></span></div>
+            <div class="plan-feature"><div class="icon star">✓</div><span>10,000 AI Credits <span class="tag-new">NEW</span></span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Unlimited SEO Audits</span></div>
+            <div class="feature-category">SEO Essentials</div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Smart Schema Markup</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>WooCommerce SEO</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Powerful XML Sitemaps</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>ChatGPT AI Tools</span></div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>TruSEO Analysis</span></div>
+            <div class="feature-category">Support</div>
+            <div class="plan-feature"><div class="icon check">✓</div><span>Standard Support</span></div>
+          </div>
+        </div>
+
+      </div><!-- /pricing-grid -->
+
+      <p class="fade-up" style="text-align:center;color:var(--muted);font-size:13px;margin-top:28px;">
+        * Special introductory pricing — all renewals are at full price. You can change plans or cancel at any time.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURE COMPARISON TABLE — hidden on mobile (<960px)
+       ============================================================ -->
+  <section class="compare-section" id="features">
+    <div class="container">
+      <div class="text-center fade-up" style="margin-bottom:48px;">
+        <span class="section-label">Feature Comparison</span>
+        <h2 class="section-title">All Plans Side-by-Side</h2>
+      </div>
+      <div class="compare-table-wrapper fade-up">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:40%">Feature</th>
+              <th>Elite<br/><small style="font-weight:400;color:var(--muted)">100 sites</small></th>
+              <th>Pro<br/><small style="font-weight:400;color:var(--muted)">10 sites</small></th>
+              <th>Plus<br/><small style="font-weight:400;color:var(--muted)">3 sites</small></th>
+              <th>Basic<br/><small style="font-weight:400;color:var(--muted)">1 site</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-category"><td colspan="5">AI &amp; Intelligence</td></tr>
+            <tr><td>AI Credits</td><td><span class="check-num">200k</span></td><td><span class="check-num">50k</span></td><td><span class="check-num">25k</span></td><td><span class="check-num">10k</span></td></tr>
+            <tr><td>ChatGPT AI Tools</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+            <tr class="table-category"><td colspan="5">SEO Essentials</td></tr>
+            <tr><td>Smart Schema Markup</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+            <tr><td>XML Sitemaps</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+            <tr><td>WooCommerce SEO</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+            <tr><td>TruSEO Analysis</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+            <tr class="table-category"><td colspan="5">Advanced SEO</td></tr>
+            <tr><td>SEO Revisions</td><td><span class="check-num">Unlimited</span></td><td><span class="check-num">30</span></td><td><span class="check-num">15</span></td><td><span class="check-no"></span></td></tr>
+            <tr><td>Author SEO (E-E-A-T)</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no"></span></td></tr>
+            <tr><td>Local Business SEO</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no"></span></td></tr>
+            <tr class="table-category"><td colspan="5">Pro &amp; Above</td></tr>
+            <tr><td>Internal Link Assistant</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td></tr>
+            <tr><td>Advanced Redirects</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td></tr>
+            <tr><td>Video &amp; News Sitemaps</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td></tr>
+            <tr class="table-category"><td colspan="5">Elite Only</td></tr>
+            <tr><td>Keyword Rank Tracking</td><td><span class="check-yes">✓</span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td></tr>
+            <tr><td>Content Decay Tracking</td><td><span class="check-yes">✓</span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td></tr>
+            <tr><td>Client Management</td><td><span class="check-yes">✓</span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td></tr>
+            <tr><td>Multi-site Network Tools</td><td><span class="check-yes">✓</span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td></tr>
+            <tr class="table-category"><td colspan="5">Support</td></tr>
+            <tr><td>Priority Support</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no"></span></td><td><span class="check-no"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS — three cards with author initials avatars
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center fade-up" style="margin-bottom:48px;">
+        <span class="section-label">Testimonials</span>
+        <h2 class="section-title">Loved by Professionals</h2>
+        <p class="section-sub">Thousands of businesses trust BROSSEO to power their organic growth.</p>
+      </div>
+      <div class="testimonials-grid stagger-children">
+        <div class="testimonial-card fade-up">
+          <div class="stars">★★★</div>
+          <p class="testimonial-text">"All-in-One SEO is a great product. I have been using it on all my WP sites for several years. Highly recommend it to anyone serious about rankings."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PP</div>
+            <div><div class="author-name">Panha Peseth</div><div class="author-role">WP Developer</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Robust without nagging or bloat. BROSSEO has been my go-to plugin for over a decade. I've come back time and again — it just works perfectly."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SS</div>
+            <div><div class="author-name">Somnang Seyha</div><div class="author-role">Chef Office Operator</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="stars">★★★★</div>
+          <p class="testimonial-text">"10 years using it allows me to say it is the best SEO plugin out there. We even have it on yearly automated renewal. Keep up the great work!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">EP</div>
+            <div><div class="author-name">Eth Poluong</div><div class="author-role">B2B Degetal Marketing</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MONEY-BACK GUARANTEE — green-tinted banner with shield icon
+       ============================================================ -->
+  <div class="container">
+    <div class="guarantee fade-up">
+      <div class="guarantee-icon">🛡️</div>
+      <div>
+        <h3>Our 100% Safe puchasement and safe use</h3>
+        <p>If within the first <strong>14 days</strong> BROSSEO isn't the perfect fit, simply reach out and we'll happily refund <strong>100%</strong> of your money — no questions asked.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FAQ — accordion, single-open behaviour, staggered reveal
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center fade-up" style="margin-bottom:48px;">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Common Questions</h2>
+      </div>
+      <div class="faq-grid stagger-children">
+
+        <!-- Each .faq-question calls toggleFaq(this) on click -->
+        <div class="faq-item fade-up">
+          <div class="faq-question" onclick="toggleFaq(this)">Who should use BROSSEO?<span class="faq-arrow">+</span></div>
+          <div class="faq-answer">BROSSEO is perfect for business owners, bloggers, designers, developers, photographers, and basically everyone who wants to improve their WordPress SEO.</div>
+        </div>
+        <div class="faq-item fade-up">
+          <div class="faq-question" onclick="toggleFaq(this)">What's required to use BROSSEO?<span class="faq-arrow">+</span></div>
+          <div class="faq-answer">BROSSEO is a WordPress plugin. You need a self-hosted WordPress site — that's all. No coding skills required.</div>
+        </div>
+        <div class="faq-item fade-up">
+          <div class="faq-question" onclick="toggleFaq(this)">Will BROSSEO slow down my website?<span class="faq-arrow">+</span></div>
+          <div class="faq-answer">Absolutely not. BROSSEO is carefully built with performance in mind, following best practices and modern standards to ensure things run smooth and fast.</div>
+        </div>
+        <div class="faq-item fade-up">
+          <div class="faq-question" onclick="toggleFaq(this)">Can I use BROSSEO on client sites?<span class="faq-arrow">+</span></div>
+          <div class="faq-answer">Yes! You can purchase a Pro or Elite license for client sites, or refer clients directly and earn a 20% affiliate commission on each purchase.</div>
+        </div>
+        <div class="faq-item fade-up">
+          <div class="faq-question" onclick="toggleFaq(this)">Do I need coding skills?<span class="faq-arrow">+</span></div>
+          <div class="faq-answer">None whatsoever. BROSSEO is one of the most beginner-friendly SEO plugins available — simply install, configure with the guided wizard, and let it work for you.</div>
+        </div>
+        <div class="faq-item fade-up">
+          <div class="faq-question" onclick="toggleFaq(this)">What happens after 14 days?<span class="faq-arrow">+</span></div>
+          <div class="faq-answer">Your subscription continues and renews automatically at the regular annual price. You can cancel at any time from your account dashboard.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--FOOTER — payment icons, links-->
+  <footer>
+    <div class="container">
+      <div class="nav-logo" style="display:inline-block;margin-bottom:12px;">BROSSEO</div>
+      <p>Trusted by <strong>3.5M+</strong> professionals to improve their search rankings.</p>
+      <div class="payment-icons">
+        <div class="payment-icon"><i class="fa-solid fa-credit-card" style="color: rgb(255, 255, 255);"></i> &nbsp; Visa</div>
+        <div class="payment-icon"><i class="fa-solid fa-credit-card" style="color: rgb(255, 255, 255);"></i> &nbsp; Mastercard</div>
+        <div class="payment-icon"><i class="fa-brands fa-cc-paypal" style="color: rgb(255, 255, 255);"></i> &nbsp; PayPal</div>
+        <div class="payment-icon"><i class="fa-brands fa-apple fa-lg" style="color: rgb(255, 255, 255);"></i> &nbsp; Apple Pay</div>
+      </div>
+      <p style="margin-top:12px;">Copyright © 2007-2025 Semper Plugins, LLC &nbsp;|&nbsp; <a href="#">Terms</a> &nbsp;|&nbsp; <a href="#">Privacy</a></p>
+    </div>
+  </footer>
+  <!-- purchase -->
+  <div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+    <div class="modal" id="modal-box">
+
+      <!-- Always-visible close button dismisses the overlay -->
+      <div class="modal-close" onclick="closeModal()"><i class="fa-regular fa-circle-xmark fa-xl" style="color: #00d4ff;"></i></div>
+
+      <!-- ── STEP 1: Plan summary + contact details ── -->
+      <div class="modal-step active" id="step-1">
+        <p style="color:var(--muted);font-size:13px;margin-bottom:4px;">CHECKOUT</p>
+        <h2>Complete Your Order</h2>
+
+        <!-- Plan summary row — content injected by openModal() -->
+        <div class="modal-plan-summary">
+          <div>
+            <div class="plan-desc" style="font-size:12px;margin-bottom:2px;">Selected Plan</div>
+            <div class="modal-plan-name" id="modal-plan-name">Pro</div>
+            <div class="modal-plan-orig" id="modal-plan-orig">$389.00</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:11px;color:var(--muted);">Today you pay</div>
+            <div class="modal-plan-price" id="modal-plan-price">$189.50</div>
+            <div style="font-size:11px;color:var(--green);">30% OFF applied ✓</div>
+          </div>
+        </div>
+
+        <!-- Contact fields for account creation -->
+        <div class="form-row">
+          <label>Full Name</label>
+          <input type="text" id="f-name" placeholder="Name"/>
+        </div>
+        <div class="form-row">
+          <label>Email Address</label>
+          <input type="email" id="f-email" placeholder="...@example.com"/>
+        </div>
+        <div class="form-row">
+          <label>Website URL</label>
+          <input type="url" id="f-url" placeholder="https://yoursitename.com"/>
+        </div>
+
+        <!-- Advance to payment step -->
+        <button class="btn-submit" onclick="goToStep(2)">Continue to Payment</button>
+
+        <!-- Trust badges row below CTA -->
+        <div class="secure-badges">
+          <span class="secure-badge-item"><i class="fa-solid fa-lock fa-lg" style="color: rgb(255, 212, 59);"></i>&nbsp; SSL Encrypted</span>
+          <span class="secure-badge-item"><i class="fa-solid fa-shield fa-lg" style="color: rgb(116, 192, 252);"></i>&nbsp; 14-Day Guarantee</span>
+          <span class="secure-badge-item"><i class="fa-solid fa-check fa-lg" style="color: rgb(5, 174, 0);"></i>&nbsp; No Hidden Fees</span>
+        </div>
+      </div>
+
+      <!-- ── Payment details ── -->
+      <div class="modal-step" id="step-2">
+        <p style="color:var(--muted);font-size:13px;margin-bottom:4px;">PAYMENT</p>
+        <h2>Payment Details</h2>
+
+        <!-- Compact plan reminder on payment step -->
+        <div class="modal-plan-summary" style="margin-bottom:20px;">
+          <div class="modal-plan-name" id="modal-plan-name2">Pro</div>
+          <div class="modal-plan-price" id="modal-plan-price2">$189.50</div>
+        </div>
+
+        <!-- Payment method tabs — selectPayMethod() activates the clicked tab -->
+        <div class="pay-methods">
+          <div class="pay-method active" onclick="selectPayMethod(this)"><i class="fa-solid fa-credit-card" style="color: rgb(255, 255, 255);"></i> &nbsp; Card</div>
+          <div class="pay-method" onclick="selectPayMethod(this)"><i class="fa-brands fa-cc-paypal" style="color: rgb(255, 255, 255);"></i> &nbsp; PayPal</div>
+          <div class="pay-method" onclick="selectPayMethod(this)"><i class="fa-brands fa-apple fa-lg" style="color: rgb(255, 255, 255);"></i> &nbsp; Apple Pay</div>
+        </div>
+
+        <!-- Card input fields; only shown when Card tab is active -->
+        <div id="card-fields">
+          <div class="form-row">
+            <label>Card Number</label>
+            <!-- formatCard() auto-spaces digits into groups of 4 -->
+            <input type="text" id="f-card" placeholder="1234/5678/9012/3456" maxlength="19" oninput="formatCard(this)"/>
+          </div>
+          <div class="form-row-grid">
+            <div class="form-row" style="margin:0;">
+              <label>Expiry</label>
+              <!-- formatExpiry() injects MM / YY separator automatically -->
+              <input type="text" placeholder="MM / YY" maxlength="7" oninput="formatExpiry(this)"/>
+            </div>
+            <div class="form-row" style="margin:0;">
+              <label>CVC</label>
+              <input type="text" placeholder="123" maxlength="4"/>
+            </div>
+          </div>
+          <div class="form-row" style="margin-top:16px;">
+            <label>Name on Card</label>
+            <input type="text" placeholder="Card Name"/>
+          </div>
+        </div>
+
+        <!-- Calls processPayment() which validates then transitions to step 3 -->
+        <button class="btn-submit" onclick="processPayment()">Complete Purchase — <span id="pay-price-label">$189.50</span></button>
+
+        <div class="secure-badges">
+          <span class="secure-badge-item"><i class="fa-solid fa-lock fa-lg" style="color: rgb(255, 212, 59);"></i>&nbsp; 256-bit Encryption</span>
+          <span class="secure-badge-item"><i class="fa-solid fa-credit-card fa-lg" style="color: rgb(255, 255, 255);"></i>&nbsp; PCI-DSS Compliant</span>
+        </div>
+      </div>
+
+      <!-- ── STEP 3: Processing (simulated 2-second spinner) ── -->
+      <div class="modal-step" id="step-3">
+        <div class="step-center" style="padding:60px 0;">
+          <!-- CSS keyframe animation on .spinner rotates the border -->
+          <div class="spinner"></div>
+          <h2 style="margin-bottom:8px;">Processing…</h2>
+          <p style="color:var(--muted);">Securely processing your payment. Please wait.</p>
+        </div>
+      </div>
+
+      <!-- ── STEP 4: Success confirmation ── -->
+      <div class="modal-step" id="step-4">
+        <div class="step-center">
+          <div class="success-icon">✓</div>
+          <h2 style="color:var(--green);">Payment Successful!</h2>
+          <p style="color:var(--muted);margin:16px 0 28px;">
+            Welcome to BROSSEO <strong id="success-plan">Pro</strong>!
+            A confirmation and your license key have been sent to your email.
+          </p>
+          <p style="font-size:13px;color:var(--muted);">
+            <i class="fa-solid fa-rocket fa-xl" style="color: rgb(255, 255, 255);"></i>&nbsp; Download BROSSEO from your WordPress plugins directory and enter your key to get started.
+          </p>
+          <!-- Closes modal and resets scroll lock -->
+          <button class="btn-submit" style="margin-top:28px;" onclick="closeModal()">Close &amp; Get Started</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="/JS/motion.js"></script>
+</body>
+</html>
