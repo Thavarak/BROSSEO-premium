@@ -49,11 +49,7 @@
       });
     }
 
-    /* ─────────────────────────────────────────────────
-       3. FAQ ACCORDION
-       Toggles .open on the parent .faq-item. Closes any
-       other open item first (single-open accordion pattern).
-    ───────────────────────────────────────────────── */
+    /* 3. FAQ ACCORDION*/
     function toggleFaq(questionEl) {
       const item = questionEl.closest('.faq-item');
       document.querySelectorAll('.faq-item.open').forEach(el => {
@@ -62,11 +58,9 @@
       item.classList.toggle('open');
     }
 
-    /* ─────────────────────────────────────────────────
-       4. PAYMENT METHOD TABS
+    /*4. PAYMENT METHOD TABS
        Marks the clicked tab active and shows the card
-       input fields only when "Card" is selected.
-    ───────────────────────────────────────────────── */
+       input fields only when "Card" is selected.*/
     function selectPayMethod(el) {
       document.querySelectorAll('.pay-method').forEach(m => m.classList.remove('active'));
       el.classList.add('active');
@@ -74,11 +68,9 @@
         el.textContent.includes('Card') ? 'block' : 'none';
     }
 
-    /* ─────────────────────────────────────────────────
-       5. INPUT FORMATTERS
+    /* 5. INPUT FORMATTERS
        formatCard()  — inserts a space every 4 digits for readability
-       formatExpiry() — injects the " / " separator between MM and YY
-    ───────────────────────────────────────────────── */
+       formatExpiry() — injects the " / " separator between MM and YY */
     function formatCard(input) {
       let v = input.value.replace(/\D/g,'').substring(0,16);
       input.value = v.replace(/(.{4})/g,'$1 ').trim();
@@ -89,14 +81,12 @@
       input.value = v;
     }
 
-    /* ─────────────────────────────────────────────────
-       6. MODAL LIFECYCLE
+    /*6. MODAL LIFECYCLE
        openModal()      — shows overlay and pre-fills plan data
        closeModal()     — hides overlay, restores body scroll
        handleOverlayClick() — dismisses modal on backdrop click
        goToStep(n)      — shows step n, hides all others
-       processPayment() — validates card, shows spinner, resolves to success
-    ───────────────────────────────────────────────── */
+       processPayment() — validates card, shows spinner, resolves to success*/
     let currentPlan = '';
 
     function openModal(planName, price, origPrice) {
