@@ -29,10 +29,6 @@
     a { color: var(--accent); text-decoration: none; }
     ul { list-style: none; }
 
-    /* ============================================================
-       ANIMATED BACKGROUND MESH — radial gradient blobs + dot grid
-       give depth without competing with foreground content
-       ============================================================ */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -50,12 +46,7 @@
       pointer-events: none; z-index: 0;
     }
 
-    /* ============================================================
-       SCROLL FADE-UP ANIMATION SYSTEM
-       .fade-up elements start invisible + offset 40px down.
-       IntersectionObserver adds .visible to trigger the CSS tween.
-       .stagger-children applies nth-child delays for card grids.
-       ============================================================ */
+    /* SCROLL FADE-UP ANIMATION SYSTEM */
     .fade-up {
       opacity: 0;
       transform: translateY(40px);
@@ -69,16 +60,11 @@
     .stagger-children .fade-up:nth-child(3) { transition-delay: .25s; }
     .stagger-children .fade-up:nth-child(4) { transition-delay: .35s; }
 
-    /* ============================================================
-       LAYOUT
-       ============================================================ */
     .container  { max-width: 1180px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
     .section    { padding: 100px 0; }
     .text-center { text-align: center; }
 
-    /* ============================================================
-       NAV — sticky with glass blur
-       ============================================================ */
+    /*NAV — sticky with glass blur*/
     nav {
       position: sticky; top: 0; z-index: 100;
       backdrop-filter: blur(18px);
@@ -101,9 +87,7 @@
     }
     .nav-cta:hover { background: var(--accent2) !important; transform: translateY(-1px); }
 
-    /* ============================================================
-       HERO
-       ============================================================ */
+    /* HERO*/
     .hero { padding: 110px 0 80px; text-align: center; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
@@ -125,9 +109,7 @@
     .hero-stat strong { display: block; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 26px; font-weight: 700; }
     .hero-stat span { color: var(--muted); font-size: 13px; }
 
-    /* ============================================================
-       SECTION HEADINGS
-       ============================================================ */
+    /* SECTION HEADINGS*/
     .section-label {
       display: inline-block; 
       font-size: 20px; 
@@ -144,9 +126,7 @@
 
     .section-sub { color: var(--muted); max-width: 520px; margin: 0 auto; font-size: 16px; }
 
-    /* ============================================================
-       BILLING TOGGLE
-       ============================================================ */
+    /*BILLING TOGGLE*/
     .billing-toggle { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 40px 0 60px; }
     .toggle-label { font-weight: 500; color: var(--muted); font-size: 15px; }
     .toggle-label.active { color: var(--text); }
@@ -166,9 +146,7 @@
       color: var(--green); font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px;
     }
 
-    /* ============================================================
-       PRICING GRID + CARDS
-       ============================================================ */
+    /* PRICING GRID + CARDS*/
     .pricing-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; align-items: start; }
 
     .plan-card {
@@ -235,9 +213,7 @@
     .feature-category { font-family:'Syne',sans-serif; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-top:10px; padding-top:10px; border-top:1px solid var(--border); }
     .tag-new { background:rgba(59,139,255,.15); color:var(--accent2); font-size:9px; font-weight:800; letter-spacing:.8px; text-transform:uppercase; padding:1px 6px; border-radius:4px; margin-left:6px; vertical-align:middle; }
 
-    /* ============================================================
-       COMPARISON TABLE
-       ============================================================ */
+    /* COMPARISON TABLE*/
     .compare-section { padding: 80px 0; }
     .compare-table-wrapper { overflow-x:auto; border-radius:var(--radius); border:1px solid var(--border); background:var(--bg2); }
     table { width:100%; border-collapse:collapse; }
@@ -272,17 +248,13 @@
     .author-name { font-weight:600; font-size:14px; }
     .author-role { color:var(--muted); font-size:12px; }
 
-    /* ============================================================
-       GUARANTEE BANNER
-       ============================================================ */
+    /*GUARANTEE BANNER*/
     .guarantee { background:linear-gradient(135deg,rgba(46,204,125,.08) 0%,rgba(59,139,255,.08) 100%); border:1px solid rgba(46,204,125,.2); border-radius:var(--radius); padding:48px; display:flex; align-items:center; gap:40px; margin:0 0 80px; }
     .guarantee-icon { flex-shrink:0; width:80px;height:80px;border-radius:50%;background:rgba(46,204,125,.12);border:2px solid rgba(46,204,125,.3);display:flex;align-items:center;justify-content:center;font-size:32px; }
     .guarantee h3 { font-family:'Syne',sans-serif; font-size:22px;font-weight:700;margin-bottom:8px; }
     .guarantee p  { color:var(--muted); font-size:15px; }
 
-    /* ============================================================
-       FAQ
-       ============================================================ */
+    /*FAQ*/
     .faq-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
     .faq-item { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius-sm); overflow:hidden; }
     .faq-question { padding:18px 20px; font-weight:600; font-size:14px; cursor:pointer; user-select:none; display:flex; justify-content:space-between; align-items:center; transition:color .2s; }
@@ -292,9 +264,6 @@
     .faq-answer { max-height:0; overflow:hidden; transition:max-height .35s ease,padding .35s ease; padding:0 20px; color:var(--muted); font-size:14px; line-height:1.7; }
     .faq-item.open .faq-answer { max-height:200px; padding:0 20px 18px; }
 
-    /* ============================================================
-       FOOTER
-       ============================================================ */
     footer { 
       border-top:1px solid var(--border); 
       padding:40px 0; 
@@ -305,13 +274,11 @@
     .payment-icons { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:16px 0; }
     .payment-icon { background:var(--bg3); border:1px solid var(--border); border-radius:6px; padding:6px 12px; font-size:12px; font-weight:600; color:var(--muted); }
 
-    /* ============================================================
-       PURCHASE MODAL — 4-step checkout overlay
+    /* PURCHASE MODAL — 4-step checkout overlay
        Step 1: Plan summary + contact info
        Step 2: Payment method + card details
        Step 3: Processing spinner (simulated)
-       Step 4: Success confirmation
-       ============================================================ */
+       Step 4: Success confirmation */
     .modal-overlay {
       position:fixed; inset:0; z-index:1000;
       background:rgba(5,8,17,.9); backdrop-filter:blur(12px);
@@ -373,9 +340,7 @@
     .secure-badges { display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px;color:var(--muted);font-size:12px; }
     .secure-badge-item { display:flex;align-items:center;gap:5px; }
 
-    /* ============================================================
-       RESPONSIVE
-       ============================================================ */
+    /*  RESPONSIVE*/
     @media (max-width:960px) {
       .pricing-grid { 
         grid-template-columns:repeat(2,1fr); 
